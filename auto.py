@@ -17,10 +17,10 @@ class DaKa(object):
     def __init__(self, username, password, eai_sess, UUkey):
         self.username = username
         self.password = password
-        self.login_url = "http://ca.its.csu.edu.cn/home/login/215"
-        self.redirect_url = "http://ca.its.csu.edu.cn/SysInfo/SsoService/215"
-        self.base_url = "https://wxxy.csu.edu.cn/ncov/wap/default/index"
-        self.save_url = "https://wxxy.csu.edu.cn/ncov/wap/default/save"
+        self.login_url = "https://ua.scu.edu.cn/login"
+        self.redirect_url = "https://ua.scu.edu.cn/login?service=https%3A%2F%2Fwfw.scu.edu.cn%2Fa_scu%2Fapi%2Fsso%2Fcas-index%3Fredirect%3Dhttps%253A%252F%252Fwfw.scu.edu.cn%252Fncov%252Fwap%252Fdefault%252Findex"
+        self.base_url = "https://wfw.scu.edu.cn/ncov/wap/default/index"
+        self.save_url = "https://wfw.scu.edu.cn/ncov/wap/default/save"
         self.eai_sess = eai_sess
         self.UUkey = UUkey
         self.cookie1 = None
