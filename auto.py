@@ -173,7 +173,7 @@ def main(username, password, eai_sess, UUkey):
         spinner.stop_and_persist(symbol='🦄 '.encode('utf-8'), text='已为您打卡成功！')
     else:
         spinner.stop_and_persist(symbol='🦄 '.encode('utf-8'), text=res['m'])
-        raise(res['m'])
+        raise RuntimeError(res['m'])
 
 
 if __name__ == "__main__":
