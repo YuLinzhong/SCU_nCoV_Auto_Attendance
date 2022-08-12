@@ -136,8 +136,7 @@ class DaKa(object):
         return "%4d%02d%02d" % (today.year, today.month, today.day)
 
     def post(self):
-        """Post the hitcard info"""
-
+        # feedback before posting, for last-minute verifying
         for currentKey in self.info:
             if self.info[currentKey] != '' and currentKey in primary:
                 if currentKey in secondary:
@@ -147,6 +146,7 @@ class DaKa(object):
                 else:
                     print(primary[currentKey]+'：'+self.info[currentKey])
 
+        # Post the hitcard info
         res = self.sess.post(self.save_url, data=self.info, headers=self.header)
         return json.loads(res.text)
 
@@ -173,6 +173,7 @@ def main(username, password, eai_sess, UUkey):
         spinner.stop_and_persist(symbol='🦄 '.encode('utf-8'), text='已为您打卡成功！')
     else:
         spinner.stop_and_persist(symbol='🦄 '.encode('utf-8'), text=res['m'])
+        raise(res['m'])
 
 
 if __name__ == "__main__":
