@@ -142,10 +142,10 @@ class DaKa(object):
             if self.info[currentKey] != '' and currentKey in primary:
                 if currentKey in secondary:
                     print(primary[currentKey]+'：'+secondary[currentKey][self.info[currentKey]])
-            elif currentKey=='geo_api_info':
-                print(primary[currentKey]+'：'+json.dumps(json.loads(self.info[currentKey].replace('true','"True"')),ensure_ascii=False,sort_keys=True, indent=6, separators=(',', ': ')))#不加ensure_ascii=False输出的会是‘中国’ 中的ascii字符码，而不是真正的中文。这是因为json.dumps序列化时对中文默认使用的ascii编码想输出真正的中文需要指定ensure_ascii=False：
-            else:
-                print(primary[currentKey]+'：'+self.info[currentKey])
+                elif currentKey=='geo_api_info':
+                    print(primary[currentKey]+'：'+json.dumps(json.loads(self.info[currentKey].replace('true','"True"')),ensure_ascii=False,sort_keys=True, indent=6, separators=(',', ': ')))#不加ensure_ascii=False输出的会是‘中国’ 中的ascii字符码，而不是真正的中文。这是因为json.dumps序列化时对中文默认使用的ascii编码想输出真正的中文需要指定ensure_ascii=False：
+                else:
+                    print(primary[currentKey]+'：'+self.info[currentKey])
 
         res = self.sess.post(self.save_url, data=self.info, headers=self.header)
         return json.loads(res.text)
