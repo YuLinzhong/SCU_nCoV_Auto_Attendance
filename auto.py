@@ -12,6 +12,25 @@ import argparse
 from apscheduler.schedulers.blocking import BlockingScheduler
 from halo import Halo
 
+sfzxDict={'1':'是','0':'否'}
+bzxyyDict={'境外交流学习':'境外交流学习','实习':'实习','回家':'回家','出差':'出差','生病住院':'生病住院','其他事假':'其他事假'}
+szxqmcDict={'华西校区':'华西校区','江安校区':'江安校区','望江校区':'望江校区'}
+zgfxdqDict={'1':'是','0':'否'}
+bztcyyDict={'2':'探亲','3':'旅游','4':'回家','5':'出差','1':'其他'}
+twDict={'1':'35℃以下','2':'35℃-36.5℃','3':'36.6℃-36.9℃','4':'37℃-37.3℃','5':'37.4℃-38℃','6':'38.1℃-38.5℃','7':'38.6℃-39℃','8':'39.1℃-40℃','9':'40.1℃以上'}
+sfcxtzDict={'1':'是','0':'否'}
+sfyyjcDict={'1':'是','0':'否'}
+jcjgqrDict={'1':'疑似感染','2':'确诊感染','3':'其他'}
+sfjcbhDict={'1':'是','0':'否'}
+jcbhlxDict={'疑似':'疑似','确诊':'确诊'}
+mjryDict={'1':'是','0':'否'}
+csmjryDict={'1':'是','0':'否'}
+sfcyglqDict={'1':'是','0':'否'}
+gllxDict={'学校家属院':'学校家属院','学校集中隔离点':'学校集中隔离点','成都校外居住地':'成都校外居住地','蓉外地区集中隔离点':'蓉外地区集中隔离点'}
+sfjzxgymDict={'1':'是','0':'否'}
+sfjzdezxgymDict={'1':'是','0':'否'}
+sfjzdszxgymDict={'1':'是','0':'否'}
+sfcxzysxDict={'1':'是','0':'否'}
 
 class DaKa(object):
     def __init__(self, username, password, eai_sess, UUkey):
@@ -77,6 +96,7 @@ class DaKa(object):
 
     def post(self):
         """Post the hitcard info"""
+        print(self.info)
         res = self.sess.post(self.save_url, data=self.info, headers=self.header)
         return json.loads(res.text)
 
