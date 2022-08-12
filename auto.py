@@ -12,25 +12,66 @@ import argparse
 from apscheduler.schedulers.blocking import BlockingScheduler
 from halo import Halo
 
-sfzxDict={'1':'是','0':'否'}
-bzxyyDict={'境外交流学习':'境外交流学习','实习':'实习','回家':'回家','出差':'出差','生病住院':'生病住院','其他事假':'其他事假'}
-szxqmcDict={'华西校区':'华西校区','江安校区':'江安校区','望江校区':'望江校区'}
-zgfxdqDict={'1':'是','0':'否'}
-bztcyyDict={'2':'探亲','3':'旅游','4':'回家','5':'出差','1':'其他'}
-twDict={'1':'35℃以下','2':'35℃-36.5℃','3':'36.6℃-36.9℃','4':'37℃-37.3℃','5':'37.4℃-38℃','6':'38.1℃-38.5℃','7':'38.6℃-39℃','8':'39.1℃-40℃','9':'40.1℃以上'}
-sfcxtzDict={'1':'是','0':'否'}
-sfyyjcDict={'1':'是','0':'否'}
-jcjgqrDict={'1':'疑似感染','2':'确诊感染','3':'其他'}
-sfjcbhDict={'1':'是','0':'否'}
-jcbhlxDict={'疑似':'疑似','确诊':'确诊'}
-mjryDict={'1':'是','0':'否'}
-csmjryDict={'1':'是','0':'否'}
-sfcyglqDict={'1':'是','0':'否'}
-gllxDict={'学校家属院':'学校家属院','学校集中隔离点':'学校集中隔离点','成都校外居住地':'成都校外居住地','蓉外地区集中隔离点':'蓉外地区集中隔离点'}
-sfjzxgymDict={'1':'是','0':'否'}
-sfjzdezxgymDict={'1':'是','0':'否'}
-sfjzdszxgymDict={'1':'是','0':'否'}
-sfcxzysxDict={'1':'是','0':'否'}
+primary={'zgfxdq':'今日是否在中高风险地区？',
+        'mjry':'今日是否接触密接人员？',
+        'csmjry':'近14日内本人/共同居住者是否去过疫情发生场所（市场、单位、小区等）或与场所人员有过密切接触？',
+        'szxqmc':'所在校区',
+        'sfjzxgym':'是否接种过新冠疫苗？',
+        'jzxgymrq':'……接种第一剂新冠疫苗时间',
+        'sfjzdezxgym':'是否接种第二剂新冠疫苗？',
+        'jzdezxgymrq':'……接种第二剂新冠疫苗时间',
+        'sfjzdszxgym':'是否接种第三剂新冠疫苗？',
+        'jzdszxgymrq':'……接种第三剂新冠疫苗时间',
+        'tw':'今日体温范围',
+        'sfcxtz':'今日是否出现发热、乏力、干咳、呼吸困难等症状？',
+        'sfjcbh':'今日是否接触无症状感染/疑似/确诊人群？',
+        'sfcxzysx':'是否有任何与疫情相关的， 值得注意的情况？',
+        'qksm':'……情况说明',
+        'sfyyjc':'是否到相关医院或门诊检查？',
+        'jcjgqr':'检查结果属于以下哪种情况',
+        'remark':'其他信息',
+        'address':'🌏api:详细地址',
+        'geo_api_info':'🌏api:原始数据',
+        'area':'🌏api:简单地址',
+        'province':'🌏api:省份',
+        'city':'🌏api:城市',
+        'sfzx':'今日是否在校？',
+        'sfcyglq':'是否处于观察期？',
+        'gllx':'观察场所',
+        'glksrq':'隔离开始日期',
+        'jcbhlx':'接触人群类型',
+        'jcbhrq':'……接触时间',
+        'bztcyy':'当前地点与上次不在同一城市，原因如下',
+        'szcs':'所在城市',
+        'bzxyy':'不在校原因：',
+        'jcjg':'检查结果属于以下哪种情况',
+        'fxyy':'返校原因'}
+
+
+
+
+
+
+secondary=dict(
+                sfzx={'1':'是','0':'否'},
+                bzxyy={'境外交流学习':'境外交流学习','实习':'实习','回家':'回家','出差':'出差','生病住院':'生病住院','其他事假':'其他事假'},
+                szxqmc={'华西校区':'华西校区','江安校区':'江安校区','望江校区':'望江校区'},
+                zgfxdq={'1':'是','0':'否'},
+                bztcyy={'2':'探亲','3':'旅游','4':'回家','5':'出差','1':'其他'},
+                tw={'1':'35℃以下','2':'35℃-36.5℃','3':'36.6℃-36.9℃','4':'37℃-37.3℃','5':'37.4℃-38℃','6':'38.1℃-38.5℃','7':'38.6℃-39℃','8':'39.1℃-40℃','9':'40.1℃以上'},
+                sfcxtz={'1':'是','0':'否'},
+                sfyyjc={'1':'是','0':'否'},
+                jcjgqr={'0':'无需检查','1':'疑似感染','2':'确诊感染','3':'其他'},
+                sfjcbh={'1':'是','0':'否'},
+                jcbhlx={'疑似':'疑似','确诊':'确诊'},
+                mjry={'1':'是','0':'否'},
+                csmjry={'1':'是','0':'否'},
+                sfcyglq={'1':'是','0':'否'},
+                gllx={'学校家属院':'学校家属院','学校集中隔离点':'学校集中隔离点','成都校外居住地':'成都校外居住地','蓉外地区集中隔离点':'蓉外地区集中隔离点'},
+                sfjzxgym={'1':'是','0':'否'},
+                sfjzdezxgym={'1':'是','0':'否'},
+                sfjzdszxgym={'1':'是','0':'否'},
+                sfcxzysx={'1':'是','0':'否'})
 
 class DaKa(object):
     def __init__(self, username, password, eai_sess, UUkey):
@@ -96,7 +137,16 @@ class DaKa(object):
 
     def post(self):
         """Post the hitcard info"""
-        print(self.info)
+
+        for currentKey in self.info:
+            if self.info[currentKey] != '' and currentKey in primary:
+                if currentKey in secondary:
+                    print(primary[currentKey]+'：'+secondary[currentKey][self.info[currentKey]])
+            elif currentKey=='geo_api_info':
+                print(primary[currentKey]+'：'+json.dumps(json.loads(self.info[currentKey].replace('true','"True"')),ensure_ascii=False,sort_keys=True, indent=6, separators=(',', ': ')))#不加ensure_ascii=False输出的会是‘中国’ 中的ascii字符码，而不是真正的中文。这是因为json.dumps序列化时对中文默认使用的ascii编码想输出真正的中文需要指定ensure_ascii=False：
+            else:
+                print(primary[currentKey]+'：'+self.info[currentKey])
+
         res = self.sess.post(self.save_url, data=self.info, headers=self.header)
         return json.loads(res.text)
 
