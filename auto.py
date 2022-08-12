@@ -33,16 +33,16 @@ class DaKa(object):
         """Login to CSU platform"""
         res1 = self.sess.get(self.login_url)
         self.cookie1 = res1.headers['Set-Cookie'].split(";")[0]
-        header1 = {'Cookie': self.cookie1}
-        data = {
-            "userName": self.username,
-            "passWord": self.password,
-            "enter": 'true',
-        }
-        res2 = self.sess.post(url=self.login_url, headers=header1, data=data, allow_redirects=False)
-        self.cookie2 = res2.headers['Set-Cookie'].split(";")[0]
+        # header1 = {'Cookie': self.cookie1}
+        # data = {
+        #     "userName": self.username,
+        #     "passWord": self.password,
+        #     "enter": 'true',
+        # }
+        # res2 = self.sess.post(url=self.login_url, headers=header1, data=data, allow_redirects=False)
+        # self.cookie2 = res2.headers['Set-Cookie'].split(";")[0]
         self.header = {
-            'Cookie': "eai-sess=" + self.eai_sess + ";" + "UUkey=" + self.UUkey + ";" + self.cookie1 + ";" + self.cookie2}
+            'Cookie': "eai-sess=" + self.eai_sess + ";" + "UUkey=" + self.UUkey + ";" + self.cookie1}
         return self.sess
 
     def get_info(self, html=None):
