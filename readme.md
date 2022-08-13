@@ -9,9 +9,9 @@
 * 可定时，默认为每天 00:05
 * 默认每次提交上次所提交的内容 （只有时间部分更新）
 
-![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200817185806.png)
+![](https://s2.loli.net/2022/08/13/LMmujI9Wthx6lcS.png)
 
-![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200817190036.png)
+![](https://s2.loli.net/2022/08/13/3CqFYj1Un28GgQw.png)
 
 ##  Usage
 
@@ -48,7 +48,7 @@
      从 Github 中进入刚刚 fork 到你的个人账号下的本项目，打开项目的 Settings->Secrets 页面
 
 
-![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200817190653.png)
+![](https://s2.loli.net/2022/08/13/xbuE7Flyn3st1k9.png)
 
 ​	点击 New Secret 按钮新建两个密码：
 
@@ -61,17 +61,17 @@
 
     进入 Code 页面，点击修改按钮
 
-    ![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200817191741.png)
+    ![](https://s2.loli.net/2022/08/13/jaO4nR5xJ1NtDWY.png)
 
     在 readme 文件中随意修改任意字符（比如加个空格），然后点击下方的 Commit Changes 即可激活每日定时打卡脚本
 
-    ![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200817192122.png)
+    ![](https://s2.loli.net/2022/08/13/z13PKxGfkaQroVd.png)
 
 4. 查看运行情况
 
     打开 Actions 页面，此时在 workflows 中应该出现了正在运行的工作流。当提交文件时会马上进行一次打卡，以后将会默认在每天的 00:05 进行打卡
 
-    ![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200817192416.png)
+    ![](https://s2.loli.net/2022/08/13/7pHABnJcv8Cdhji.png)
 
 ## 修改打卡时间
 
@@ -81,9 +81,9 @@
 
 更多关于时间的具体书写格式请参考 [POSIX cron 语法](https://crontab.guru/) 和 [官方文档](https://docs.github.com/cn/actions/reference/events-that-trigger-workflows#)。
 
-![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200817194102.png)
+![](https://s2.loli.net/2022/08/13/8TqZ52M4haBjtbP.png)
 
-![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200817194250.png)
+![](https://s2.loli.net/2022/08/13/nChqYb4vEFesruK.png)
 
 ---
 
