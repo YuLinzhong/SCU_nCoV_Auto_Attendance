@@ -15,17 +15,15 @@
 
 获取 eai-sess 和 UUkey
 
-1. 打开浏览器，按 F12 (Mac 按 ⌥Option+⌘Command+i ) 调出控制台
+1. 打开健康打卡页面 [https://wfw.scu.edu.cn/ncov/wap/default/index](https://wfw.scu.edu.cn/ncov/wap/default/index)
 
-2. 打开 Network 选项，勾选 Preserve log![](https://s2.loli.net/2022/08/13/NslBm98qkfuvpyM.png)
+2. 若跳转至此页面，输入学工号与统一身份认证密码进行登录![](https://s2.loli.net/2022/08/13/oGUukrQn4F1iJyP.jpg)
 
-3. 打开健康打卡页面 [https://wfw.scu.edu.cn/ncov/wap/default/index](https://wfw.scu.edu.cn/ncov/wap/default/index)
+3. 登陆后按F12，直接在Cookie中找到 eai-sess 和 UUke，如图
 
-4. 若跳转至此页面，输入学工号与统一身份认证密码进行登录![](https://s2.loli.net/2022/08/13/oGUukrQn4F1iJyP.jpg)
+   ![image-20220814004711579](http://c7f49cfdf594b0ba.oss-cn-hangzhou.aliyuncs.com/img/typora/image-20220814004711579.png)
 
-5. 在左侧 找到 index 并点开，在右侧找到 Request Headers，将 Cookie 中的 eai-sess 和 UUkey 记录下来![](https://s2.loli.net/2022/08/13/Ejw5tI6md9MnTeH.png)
-
-如果以上方法未能找到 index 页面和 Cookie 中的 eai-sess 和 UUke，请尝试按下图方法搜索：
+如果以上方法未能找到 Cookie 中的 eai-sess 和 UUke，请尝试按下图方法搜索：
 
 1. 打开 Network 选项，勾选 Preserve log![](https://s2.loli.net/2022/08/13/KWG1ux2m7DI5Hi8.png)
 
@@ -61,16 +59,16 @@
 
      从 Github 中进入刚刚导入到你的个人账号下的本项目，打开项目的 Settings->Secrets 页面
 
+![](https://s2.loli.net/2022/08/13/xbuE7Flyn3st1k9.png)
 
-    ![](https://s2.loli.net/2022/08/13/xbuE7Flyn3st1k9.png)
+点击 New Secret 按钮新建两个密码：
 
-    点击 New Secret 按钮新建两个密码：
+ EAI_SESS：你的 eai-sess cookie
 
-    * EAI_SESS：你的 eai-sess cookie
+ UUKEY：你的 UUkey cookie
 
-    * UUKEY：你的 UUkey cookie
+\* 学工号和统一身份认证密码 (USERNAME 和 PASSWORD) **暂时先不需要**，已经添加的**可以删除**（因为四川大学登录比中南大学复杂一些，有验证码 : | 还没弄出来）
 
-    \* 学工号和统一身份认证密码 (USERNAME 和 PASSWORD) **暂时先不需要**，已经添加的**可以删除**（因为四川大学登录比中南大学复杂一些，有验证码 : | 还没弄出来）
 4. 启动定时打卡
 
     进入 Code 页面，点击修改按钮
