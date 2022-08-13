@@ -19,25 +19,25 @@
 
 获取 eai-sess 和 UUkey
 
-1. 打开浏览器，按 F12 调出控制台
+1. 打开浏览器，按 F12 (Mac 按 ⌥Option+⌘Command+i ) 调出控制台
 
-2. 打开 Network 选项，勾选 Preserve log![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200410114231.jpg)
+2. 打开 Network 选项，勾选 Preserve log![](https://s2.loli.net/2022/08/13/NslBm98qkfuvpyM.png)
 
 3. 打开健康打卡页面 [https://wfw.scu.edu.cn/ncov/wap/default/index](https://wfw.scu.edu.cn/ncov/wap/default/index)
 
-4. 若跳转至此页面，输入学工号与统一身份认证密码进行登录![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200410114831.jpg)
+4. 若跳转至此页面，输入学工号与统一身份认证密码进行登录![](https://s2.loli.net/2022/08/13/oGUukrQn4F1iJyP.jpg)
 
-5. 在左侧找到 index 并点开，在右侧找到 Request Headers，将 Cookie 中的 eai-sess 和 UUkey 记录下来![](https://raw.githubusercontent.com/JoeYe-233/Image_Repo/main/img/202208131.png)
+5. 在左侧找到 index 并点开，在右侧找到 Request Headers，将 Cookie 中的 eai-sess 和 UUkey 记录下来![](https://s2.loli.net/2022/08/13/Ejw5tI6md9MnTeH.png)
 
 如果以上方法未能找到 index 页面和 Cookie 中的 eai-sess 和 UUke，请尝试按下图方法搜索：
 
-1. 打开 Network 选项，勾选 Preserve log![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200915000353.png)
+1. 打开 Network 选项，勾选 Preserve log![](https://s2.loli.net/2022/08/13/KWG1ux2m7DI5Hi8.png)
 
-2. 点击放大镜处的搜索按钮![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200915000637.png)
+2. 点击放大镜处的搜索按钮![](https://s2.loli.net/2022/08/13/ZPXw5W8AjQn6Jh7.png)
 
-3. 搜索 eai-sess![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200915000915.jpg)
+3. 搜索 eai-sess![](https://s2.loli.net/2022/08/13/uMAm2G8Lx5gS7Js.jpg)
 
-4. 搜索 UUkey![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200915001018.jpg)
+4. 搜索 UUkey![](https://s2.loli.net/2022/08/13/th56UXkpxwKZ2PD.jpg)
 
 ### 运行方式
 
@@ -56,7 +56,7 @@
 
 * UUKEY：你的 UUkey cookie
 
-* 学工号和统一身份认证密码 (USERNAME 和 PASSWORD) **暂时先不需要**，已经添加的**可以删除**（因为四川大学登录比中南大学复杂一些，有验证码 :/ 还没弄出来）
+* 学工号和统一身份认证密码 (USERNAME 和 PASSWORD) **暂时先不需要**，已经添加的**可以删除**（因为四川大学登录比中南大学复杂一些，有验证码 : | 还没弄出来）
 3. 启动定时打卡
 
     进入 Code 页面，点击修改按钮
