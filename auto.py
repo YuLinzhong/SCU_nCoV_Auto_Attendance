@@ -159,9 +159,9 @@ def main(username, password, eai_sess, UUkey):
     dk = DaKa(username, password, eai_sess, UUkey)
     spinner.succeed('已新建打卡实例')
 
-    spinner.start(text='登录到中南大学信息门户...')
+    spinner.start(text='登录到四川大学信息门户...')
     dk.login()
-    spinner.succeed('已登录到中南大学信息门户')
+    spinner.succeed('已登录到四川大学信息门户')
 
     spinner.start(text='正在获取个人信息...')
     dk.get_info()
