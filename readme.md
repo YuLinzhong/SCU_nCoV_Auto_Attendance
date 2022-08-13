@@ -1,4 +1,4 @@
-# 健康打卡定时自动脚本（GitHub Actions 版）
+# 健康打卡定时自动脚本（GitHub Actions  版）
 
 **注意**：本 master 分支版本代码使用 GitHub Actions 定时运行，无需部署在服务器。如需在服务器中运行，请使用 service 分支中的代码。
 
