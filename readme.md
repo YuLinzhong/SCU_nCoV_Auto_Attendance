@@ -9,10 +9,6 @@
 * 可定时，默认为每天 00:05
 * 默认每次提交上次所提交的内容 （只有时间部分更新）
 
-![](https://s2.loli.net/2022/08/13/LMmujI9Wthx6lcS.png)
-
-![](https://s2.loli.net/2022/08/13/3CqFYj1Un28GgQw.png)
-
 ##  Usage
 
 ## 获取 Cookie
@@ -41,23 +37,41 @@
 
 ### 运行方式
 
-1. fork 本项目到你的个人账号
+1. import 本项目到你的个人账号
 
-2. 设置 Secrets
+    ![](https://s2.loli.net/2022/08/13/cg2Rpn7OqKavzmM.png)
 
-     从 Github 中进入刚刚 fork 到你的个人账号下的本项目，打开项目的 Settings->Secrets 页面
+    **注意**：一定勾选 **Private** （私有）
+
+    否则所有 Action 的日志将会公开，包括日志里的**个人信息**
+
+    如下图配置即可：
+
+    ![](https://s2.loli.net/2022/08/13/jAmQkhe9ta7s5vP.jpg)
+
+2. 导入后更改 Actions 设置
+
+    在导入后将 Action 设置中**第一个选项** (Actions permissions) 改为选中**第一个**
+
+    **否则 Actions 将无法运行**
+
+    ![](https://s2.loli.net/2022/08/13/IzprhGtUfyAQdHV.jpg)
+
+3. 设置 Secrets
+
+     从 Github 中进入刚刚导入到你的个人账号下的本项目，打开项目的 Settings->Secrets 页面
 
 
-![](https://s2.loli.net/2022/08/13/xbuE7Flyn3st1k9.png)
+    ![](https://s2.loli.net/2022/08/13/xbuE7Flyn3st1k9.png)
 
-​	点击 New Secret 按钮新建两个密码：
+    点击 New Secret 按钮新建两个密码：
 
-* EAI_SESS：你的 eai-sess cookie
+    * EAI_SESS：你的 eai-sess cookie
 
-* UUKEY：你的 UUkey cookie
+    * UUKEY：你的 UUkey cookie
 
-* 学工号和统一身份认证密码 (USERNAME 和 PASSWORD) **暂时先不需要**，已经添加的**可以删除**（因为四川大学登录比中南大学复杂一些，有验证码 : | 还没弄出来）
-3. 启动定时打卡
+    \* 学工号和统一身份认证密码 (USERNAME 和 PASSWORD) **暂时先不需要**，已经添加的**可以删除**（因为四川大学登录比中南大学复杂一些，有验证码 : | 还没弄出来）
+4. 启动定时打卡
 
     进入 Code 页面，点击修改按钮
 
@@ -67,15 +81,20 @@
 
     ![](https://s2.loli.net/2022/08/13/z13PKxGfkaQroVd.png)
 
-4. 查看运行情况
+5. 查看运行情况
 
     打开 Actions 页面，此时在 workflows 中应该出现了正在运行的工作流。当提交文件时会马上进行一次打卡，以后将会默认在每天的 00:05 进行打卡
 
     ![](https://s2.loli.net/2022/08/13/7pHABnJcv8Cdhji.png)
 
+    效果图：
+
+    ![](https://s2.loli.net/2022/08/13/LMmujI9Wthx6lcS.png)
+
+    ![](https://s2.loli.net/2022/08/13/3CqFYj1Un28GgQw.png)
 ## 修改打卡时间
 
-打开项目中的/.github/workflows/python-package.yml 文件，修改 corn 中的值，注意使用 UTC 零区时间。
+打开项目中的 /.github/workflows/python-package.yml 文件，修改 corn 中的值，注意使用 UTC 零区时间。
 
 例如，当前默认打卡时间是北京时间 (UTC+8) 每天 00:05，换算成 UTC 零区时间为 16:05。
 
