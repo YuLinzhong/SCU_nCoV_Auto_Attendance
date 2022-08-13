@@ -21,23 +21,23 @@
 
 1. 打开浏览器，按 F12 调出控制台
 
-2. 打开 Network 选项，勾选 Preserve log[](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200410114231.jpg)
+2. 打开 Network 选项，勾选 Preserve log!![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200410114231.jpg)
 
 3. 打开健康打卡页面 [https://wfw.scu.edu.cn/ncov/wap/default/index](https://wfw.scu.edu.cn/ncov/wap/default/index)
 
-4. 若跳转至此页面，输入学工号与统一身份认证密码进行登录[](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200410114831.jpg)
+4. 若跳转至此页面，输入学工号与统一身份认证密码进行登录![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200410114831.jpg)
 
-5. 在左侧找到 info 并点开，在右侧找到 Request Headers，将 Cookie 中的 eai-sess 和 UUkey 记录下来[](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200410115438.jpg)
+5. 在左侧找到 index 并点开，在右侧找到 Request Headers，将 Cookie 中的 eai-sess 和 UUkey 记录下来![](https://raw.githubusercontent.com/JoeYe-233/Image_Repo/main/img/202208131.png)
 
-如果以上方法未能找到 info 页面和 Cookie 中的 eai-sess 和 UUke，请尝试按下图方法搜索：
+如果以上方法未能找到 index 页面和 Cookie 中的 eai-sess 和 UUke，请尝试按下图方法搜索：
 
-1. 打开 Network 选项，勾选 Preserve log[](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200915000353.png)
+1. 打开 Network 选项，勾选 Preserve log![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200915000353.png)
 
-2. 点击放大镜处的搜索按钮[](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200915000637.png)
+2. 点击放大镜处的搜索按钮![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200915000637.png)
 
-3. 搜索 eai-sess[](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200915000915.jpg)
+3. 搜索 eai-sess![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200915000915.jpg)
 
-4. 搜索 UUkey[](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200915001018.jpg)
+4. 搜索 UUkey![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200915001018.jpg)
 
 ### 运行方式
 
