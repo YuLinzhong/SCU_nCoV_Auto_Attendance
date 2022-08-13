@@ -21,7 +21,7 @@
 
 1. 打开浏览器，按 F12 调出控制台
 
-2. 打开 Network 选项，勾选 Preserve log!![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200410114231.jpg)
+2. 打开 Network 选项，勾选 Preserve log![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200410114231.jpg)
 
 3. 打开健康打卡页面 [https://wfw.scu.edu.cn/ncov/wap/default/index](https://wfw.scu.edu.cn/ncov/wap/default/index)
 
@@ -50,16 +50,13 @@
 
 ![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200817190653.png)
 
-​	点击 New Secret 按钮新建四个密码：
-
-* USERNAME：你的四川大学学工号
-
-* PASSWORD：你的四川大学统一身份认证密码
+​	点击 New Secret 按钮新建两个密码：
 
 * EAI_SESS：你的 eai-sess cookie
 
 * UUKEY：你的 UUkey cookie
 
+* 学工号和统一身份认证密码 (USERNAME 和 PASSWORD) **暂时先不需要**，已经添加的**可以删除**（因为四川大学登录比中南大学复杂一些，有验证码 :/ 还没弄出来）
 3. 启动定时打卡
 
     进入 Code 页面，点击修改按钮
