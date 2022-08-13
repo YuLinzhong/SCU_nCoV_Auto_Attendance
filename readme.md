@@ -27,7 +27,7 @@
 
 4. 若跳转至此页面，输入学工号与统一身份认证密码进行登录![](https://s2.loli.net/2022/08/13/oGUukrQn4F1iJyP.jpg)
 
-5. 在左侧找到 index 并点开，在右侧找到 Request Headers，将 Cookie 中的 eai-sess 和 UUkey 记录下来![](https://s2.loli.net/2022/08/13/Ejw5tI6md9MnTeH.png)
+5. 在左侧 找到 index 并点开，在右侧找到 Request Headers，将 Cookie 中的 eai-sess 和 UUkey 记录下来![](https://s2.loli.net/2022/08/13/Ejw5tI6md9MnTeH.png)
 
 如果以上方法未能找到 index 页面和 Cookie 中的 eai-sess 和 UUke，请尝试按下图方法搜索：
 
