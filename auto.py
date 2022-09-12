@@ -14,7 +14,7 @@ from halo import Halo
 
 
 
-time.sleep(random.randint(1, 10)*60) 
+time.sleep(random.randint(10, 30)*60) 
 
 
 primary={'zgfxdq':'今日是否在中高风险地区？',
