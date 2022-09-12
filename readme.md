@@ -96,7 +96,7 @@
 
 例如，当前默认打卡时间是北京时间 (UTC+8) 每天 00:05，换算成 UTC 零区时间为 16:05。
 
-随机时间只需要在 `auto.py` 中修改 `time。sleep()` 中的数字即可。
+随机时间只需要在 `auto.py` 中修改 `time.sleep()` 中的数字即可。
 
 更多关于时间的具体书写格式请参考 [POSIX cron 语法](https://crontab.guru/) 和 [官方文档](https://docs.github.com/cn/actions/reference/events-that-trigger-workflows#)。
 
