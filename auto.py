@@ -3,7 +3,7 @@ import datetime
 import getpass
 import os
 import time
-
+import random 
 import json
 import re
 import requests
@@ -11,6 +11,11 @@ import urllib3
 import argparse
 from apscheduler.schedulers.blocking import BlockingScheduler
 from halo import Halo
+
+
+
+time.sleep(random.randint(1, 10)*60) 
+
 
 primary={'zgfxdq':'今日是否在中高风险地区？',
         'mjry':'今日是否接触密接人员？',
