@@ -6,7 +6,7 @@
 
 **特此声明**：项目用于学习交流，仅用于各项无异常时打卡，如有身体不适等情况还请自行如实打卡！
 
-* 可定时，默认为每天 00:05
+* 可定时，默认为每天 00:06-00:15随机
 * 默认每次提交上次所提交的内容 （只有时间部分更新）
 
 ##  Usage
@@ -95,6 +95,8 @@
 打开项目中的 /.github/workflows/python-package.yml 文件，修改 corn 中的值，注意使用 UTC 零区时间。
 
 例如，当前默认打卡时间是北京时间 (UTC+8) 每天 00:05，换算成 UTC 零区时间为 16:05。
+
+随机时间只需要在 `auto.py` 中修改 `time。sleep()` 中的数字即可。
 
 更多关于时间的具体书写格式请参考 [POSIX cron 语法](https://crontab.guru/) 和 [官方文档](https://docs.github.com/cn/actions/reference/events-that-trigger-workflows#)。
 
